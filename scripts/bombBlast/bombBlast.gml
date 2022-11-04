@@ -1,6 +1,6 @@
 function bombBlast(a, b){
 	
-	if(a < 0 || b < 0 || a >= ww.WIDTH || b >= ww.HEIGHT){
+	if(a < 0 || b < 0 || a >= ww.W || b >= ww.H){
 		return;
 	}
 	
@@ -9,5 +9,4 @@ function bombBlast(a, b){
 	}
 	
 	instance_create_depth(a * 50, b * 50, -5000, effBlast);
-	setTileImages();
 }

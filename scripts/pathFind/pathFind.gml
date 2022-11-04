@@ -6,23 +6,23 @@ function pathFind(xStart, yStart, xEnd, yEnd, avoidMobs){
 	xGo = -1; yGo = -1;
 
 	///make array of all map locations set to unchecked
-	for(var a=0; a<ww.WIDTH; a++){
-		for(var b=0; b<ww.HEIGHT; b++){
+	for(var a=0; a<ww.W; a++){
+		for(var b=0; b<ww.H; b++){
 			mapStatus[a, b] = "unchecked";
 		}	
 	}
 
 	///make array of all map location's parent cords set to -1
-	for(var a=0; a<ww.WIDTH; a++){
-		for(var b=0; b<ww.HEIGHT; b++){
+	for(var a=0; a<ww.W; a++){
+		for(var b=0; b<ww.H; b++){
 			xParent[a, b] = -1;
 			yParent[a, b] = -1;
 		}	
 	}
 
 	///make array of all map location's movement costs, can default to 0
-	for(var a=0; a<ww.WIDTH; a++){
-		for(var b=0; b<ww.HEIGHT; b++){
+	for(var a=0; a<ww.W; a++){
+		for(var b=0; b<ww.H; b++){
 			costReal[a, b] = 0;
 			costGuess[a, b] = 0;
 		}	
@@ -35,8 +35,8 @@ function pathFind(xStart, yStart, xEnd, yEnd, avoidMobs){
 	//target bounds checks
 	while(xEnd < 0){ xEnd ++; }
 	while(yEnd < 0){ yEnd ++; }
-	while(xEnd >= ww.WIDTH){ xEnd --; }
-	while(yEnd >= ww.HEIGHT){ yEnd --; }
+	while(xEnd >= ww.W){ xEnd --; }
+	while(yEnd >= ww.H){ yEnd --; }
 
 	if(xStart == xEnd && yStart == yEnd){ return; }
 	
@@ -70,12 +70,12 @@ function pathFind(xStart, yStart, xEnd, yEnd, avoidMobs){
 			if(dir == 4){ cx = xCursor - 1; cy = yCursor; }
 		
 			//bounds check
-			if(cx < 0 || cy < 0 || cx >= ww.WIDTH || cy >= ww.HEIGHT){ continue; }
+			if(cx < 0 || cy < 0 || cx >= ww.W || cy >= ww.H){ continue; }
 		
 			//block check
 			//if( tileCanBlock(cx, cy)){ continue; }
 			if(cx != xEnd || cy != yEnd){ // no block checks for target space
-				if(ww.bmap[cx, cy] >= 50){ continue; }
+				if(ww.bmap[cx, cy] != noone){ continue; }
 				if(avoidMobs && ww.mmap[cx, cy] != noone){ continue; }
 			}
 		
@@ -127,7 +127,6 @@ function pathFind(xStart, yStart, xEnd, yEnd, avoidMobs){
 		//s = "found path of " + string(ds_list_size(xTemp));
 		//s += " from " + string(xStart) + ", " + string(yStart);
 		//s += " to " + string(xEnd) + ", " + string(yEnd);
-		//show_debug_message(s);
 	
 		//reverse the temp list into the object's path list
 		//for(var i=ds_list_size(xTemp)-1; i>=0; i--){

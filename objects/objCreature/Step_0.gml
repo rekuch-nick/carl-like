@@ -1,5 +1,4 @@
-if(ww.screenOther != noone || ww.screenTitle != noone){ return; }
-
+if(instance_number(objScreen) > 0){ return; }
 
 
 // snap to cords
@@ -7,6 +6,7 @@ var m = 5;
 if(isPlayer && pc.debug){ m = 10; }
 if(isPlayer){ m = 10; } ///
 for(var i=0; i<m; i++){
+	
 	if(x < (xs * 50) + 25){ x ++; }
 	if(y < (ys * 50) + 25){ y ++; }
 	if(x > (xs * 50) + 25){ x --; }

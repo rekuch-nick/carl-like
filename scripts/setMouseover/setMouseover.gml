@@ -5,9 +5,9 @@ function setMouseover(){
 	ww.hud.pcHPChange = 0;
 	ww.hud.mpChange = 0;
 	
-	var a = pc.xm; var b = ym;
+	var a = pc.xm; var b = pc.ym;
 	
-	if(a >= 0 && b >= 0 && a < ww.WIDTH && b < ww.HEIGHT){
+	if(inBounds(a, b)){
 		if(ww.mmap[a, b] != noone){
 			ww.hud.mob = ww.mmap[a, b];
 			

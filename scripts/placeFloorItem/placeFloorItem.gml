@@ -4,15 +4,15 @@ function placeFloorItem(t, a, b){
 		var tries = 0;
 		while(true){
 			tries ++;
-			a = irandom_range(0, ww.WIDTH - 1);
-			b = irandom_range(0, ww.HEIGHT - 1);
+			a = irandom_range(0, ww.W - 1);
+			b = irandom_range(0, ww.H - 1);
 			
 			
-			if(ww.bmap[a, b] < 10 && ww.imap[a, b] == noone && ww.fmap[a, b] < 25){
+			if(ww.bmap[a, b] == noone && ww.imap[a, b] == noone && tileUnimportant(ww.fmap[a, b])){
 				break;
 			}
 			
-			if(tries > 2000){ return true; }
+			if(tries > 2000){ return false; }
 		}
 	}
 	
@@ -30,8 +30,7 @@ function placeFloorItem(t, a, b){
 	}
 	
 	if(a == -1 || b = -1){ return false; }
-	if(ww.bmap[a, b] > 10){ return false; }
-	
+	if(ww.bmap[a, b] != noone){ return false; }
 	if(ww.imap[a, b] != noone){ return false; }
 	
 	
@@ -39,10 +38,7 @@ function placeFloorItem(t, a, b){
 	item.xs = a; item.ys = b;
 	ww.imap[a, b] = item;
 	
-	for(var i=0; i<15; i++){
-		instance_create_depth(a * 50 + irandom_range(10, 40), b * 50 + irandom_range(10, 40), -5000, effCoinSpark);
-	}
-	
+	//for(var i=0; i<15; i++){ instance_create_depth(a * 50 + irandom_range(10, 40), b * 50 + irandom_range(10, 40), -5000, effCoinSpark); }
 	
 	return true;
 }

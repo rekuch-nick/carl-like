@@ -60,7 +60,7 @@ if(keyboard_check_pressed(vk_enter)){ pressingExit = true; }
 if(pressingExit){
 	ww.screenOther = noone;
 	instance_destroy();
-	nextRoom("");
+	ww.makeWorld = true;
 	pc.enter = "";
 }
 

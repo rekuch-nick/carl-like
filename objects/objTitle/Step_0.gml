@@ -30,3 +30,10 @@ if(keyboard_check(vk_control)){
 		ww.seed -= 10;
 	}	
 }
+
+
+if(keyboard_check_pressed(vk_enter)){
+	ww.makeWorld = true;
+	ww.screenTitle = noone;
+	instance_destroy();
+}

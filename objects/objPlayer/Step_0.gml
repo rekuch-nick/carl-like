@@ -1,8 +1,7 @@
 event_inherited();
 if(actCD > 0){ actCD --; }
 
-if(ww.nodes > 0 || ww.tasks > 0){ return; }
-if(ww.screenTitle != noone){ return; }
+
 
 xm = floor(mouse_x / 50);
 ym = floor(mouse_y / 50);
@@ -61,11 +60,11 @@ if(keyboard_check_pressed(vk_backspace)){
 }
 
 if(debug && keyboard_check_pressed(vk_f1)){
-	nextRoom("");
+	ww.makeWorld = true;
 }
 
 if(debug && keyboard_check_pressed(vk_f2)){
-	for(var i=0; i<20; i++){ placeFreeBlock(60); }
+	for(var i=0; i<20; i++){ placeFreeBlock(imgChest); }
 }
 
 if(keyboard_check_pressed(ord("B"))){ useBomb(); }
@@ -112,7 +111,7 @@ if(canMove){
 	canAttack = mouseReleased;
 	
 	
-	if(pressingPass){ movePlayer(0, 0); playerPassedTurn(); }
+	if(pressingPass){ spawnCD = 0; movePlayer(0, 0); playerPassedTurn(); }
 	if(pressingUp){ movePlayer(0, -1); }
 	if(pressingRight){ movePlayer(1, 0); }
 	if(pressingDown){ movePlayer(0, 1); }
@@ -120,7 +119,7 @@ if(canMove){
 	
 	if(mouse_check_button(mb_left)){
 		
-		if(xm >= 0 && ym >= 0 && xm < ww.WIDTH && ym < ww.HEIGHT
+		if(xm >= 0 && ym >= 0 && xm < ww.W && ym < ww.H
 			&& (xm != xs || ym != ys)
 		){
 			if(abs(xs - xm) + abs(ys - ym) == 1){
@@ -171,8 +170,8 @@ if(ww.imap[xs, ys] != noone){
 		enter = "gear";
 	}
 }
-if(ww.bmap[xs, ys] == 29){ enter = "exit"; }
-if(ww.bmap[xs, ys] == 28 && debug){ enter = "exit"; }
+if(ww.fmap[xs, ys] == imgExit){ enter = "exit"; }
+if(ww.fmap[xs, ys] == imgExitSeal){ enter = "exit"; }
 
 if(keyboard_check_pressed(vk_enter) || mouse_check_button_pressed(mb_right)){
 	if(enter == "exit"){ 

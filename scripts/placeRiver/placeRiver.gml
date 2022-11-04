@@ -1,12 +1,12 @@
 function placeRiver(){
 	
-	var xStart = irandom_range(3, ww.WIDTH - 4);
-	var yStart = irandom_range(2, ww.HEIGHT - 3);
+	var xStart = irandom_range(3, ww.W - 4);
+	var yStart = irandom_range(2, ww.H - 3);
 	
 	if(irandom_range(0, 1)){
-		xStart = irandom_range(0, 1) ? 0 : ww.WIDTH - 1;
+		xStart = irandom_range(0, 1) ? 0 : ww.W - 1;
 	} else {
-		yStart = irandom_range(0, 1) ? 0 : ww.HEIGHT - 1;
+		yStart = irandom_range(0, 1) ? 0 : ww.H - 1;
 	}
 	
 	
@@ -14,30 +14,28 @@ function placeRiver(){
 	do {
 		var ok = true;
 		
-		var xEnd = irandom_range(0, ww.WIDTH - 1);
-		var yEnd = irandom_range(0, ww.HEIGHT - 1);
+		var xEnd = irandom_range(0, ww.W - 1);
+		var yEnd = irandom_range(0, ww.H - 1);
 	
 		if(irandom_range(0, 1)){
-			xEnd = irandom_range(0, 1) ? 0 : ww.WIDTH - 1;
+			xEnd = irandom_range(0, 1) ? 0 : ww.W - 1;
 		} else {
-			yEnd = irandom_range(0, 1) ? 0 : ww.HEIGHT - 1;
+			yEnd = irandom_range(0, 1) ? 0 : ww.H - 1;
 		}
 		
 		var dis = abs(xStart - xEnd) + abs(yStart - yEnd);
-		if(dis < ww.WIDTH){ ok = false; }
+		if(dis < ww.W){ ok = false; }
 		
 		
 		
 	} until (ok);
 	
 	if(xStart == 0){ xStart --; }
-	if(xStart == ww.WIDTH-1){ xStart ++; }
+	if(xStart == ww.W-1){ xStart ++; }
 	if(yStart == 0){ yStart --; }
-	if(yStart == ww.HEIGHT-1){ yStart ++; }
+	if(yStart == ww.H-1){ yStart ++; }
 	
 	var a = xStart; var b = yStart;
-	//show_debug_message(string(xStart) + ", " + string(yStart));
-	//show_debug_message(string(xEnd) + ", " + string(yEnd));
 	
 	var tries = 0;
 	while(a != xEnd || b != yEnd) {

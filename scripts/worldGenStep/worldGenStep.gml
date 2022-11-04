@@ -7,7 +7,6 @@ function worldGenStep(){
 		if(mapCD < 1){
 			mapCD = mapCDMax;
 			resolveNode();
-			setTileImages();
 		
 			if(nodes == 0){ ////
 				tasks = 2;
@@ -28,7 +27,7 @@ function worldGenStep(){
 				tasks --;
 			} else {
 				upSwitches = 0;
-				for(var a=0; a<ww.WIDTH; a++){ for(var b=0; b<ww.HEIGHT; b++){
+				for(var a=0; a<ww.W; a++){ for(var b=0; b<ww.H; b++){
 					if(ww.bmap[a, b] == 31){ upSwitches ++; }
 				}}
 				

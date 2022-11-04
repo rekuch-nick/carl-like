@@ -17,11 +17,11 @@ function spawnMonster(a, b, t){
 		tries ++;
 		if(tries > 100){ break; }
 		
-		var aa = irandom_range(0, ww.WIDTH - 1);
-		var bb = irandom_range(0, ww.HEIGHT - 1);
+		var aa = irandom_range(0, ww.W - 1);
+		var bb = irandom_range(0, ww.H - 1);
 		
-		if(ww.bmap[aa, bb] >= 10){ continue; } // 50 ?
-		if(ww.fmap[aa, bb] >= 25){ continue; } // 50 ?
+		if(!tileUnimportant(ww.fmap[aa, bb])){ continue; }
+		if(ww.bmap[aa, bb] != noone){ continue; }
 		if(ww.mmap[aa, bb] != noone){ continue; }
 		
 		if(abs(pc.xs - aa) + abs(pc.ys - bb) < 2){ continue; }

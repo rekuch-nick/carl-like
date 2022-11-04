@@ -5,6 +5,5 @@ function openChest(a, b){
 	
 	spawnGear(noone, a, b);
 	
-	setTileImages();
 
 }

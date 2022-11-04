@@ -1,18 +1,21 @@
 function placeFreeBlock(n){
 	
 	var ok = false;
+	var tries = 0;
 	do {
-		ok = false;
-		var a = irandom_range(0, ww.WIDTH-1);
-		var b = irandom_range(0, ww.HEIGHT-1);
+		tries ++;
+		ok = true;
+		var a = irandom_range(0, ww.W-1);
+		var b = irandom_range(0, ww.H-1);
 		
-		if(ww.bmap[a, b] == 0){ ok = true; }
-		if(ww.fmap[a, b] > 9){ ok = false; }
+		if(!tileUnimportant(ww.fmap[a, b])){ ok = false; }
+		if(!tileUnimportant(ww.bmap[a, b])){ ok = false; }
 		if(a == pc.xs && b == pc.ys){ ok = false; }
 		
+	
+	if(tries > 10000){ return false; }
 	} until (ok)
 	
 	ww.bmap[a, b] = n;
-	setTileImages();
-
+	return true;
 }

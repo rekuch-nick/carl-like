@@ -3,13 +3,10 @@ function spawnGear(t, a, b){
 	if(t == noone){
 		t = objSword;
 		//var r = irandom_range(1, 6);
-		var r = ww.tRoll[ww.tRollIndex];
-		ww.tRollIndex ++;
-		if(ww.tRollIndex >= 1000){ ww.tRollIndex = 0; }
+		var r = ww.tmap[a, b];
+		var r2 = irandom_range(1, 100);
 		
-		var r2 = ww.tRoll[ww.tRollIndex];
-		ww.tRollIndex ++;
-		if(ww.tRollIndex >= 1000){ ww.tRollIndex = 0; }
+		
 		
 		var m = 8 + (floor(pc.stage / 5) * 2);
 		m = clamp(m, 0, 10);
@@ -40,10 +37,13 @@ function spawnGear(t, a, b){
 	
 	var item = instance_create_depth(a * 50, b * 50, -500 - b, t);
 	item.bonus = ceil(pc.stage / 10);
-	if(r2 >= 901){ item.bonus ++; }
+	if(r2 >= 86){ item.bonus ++; }
 	
 	if(item.slot == "wep"){
 		item.str += item.bonus;
+		if(item.bonus >= 5){
+			item.textColor = c_green;
+		}
 	}
 	
 	if(item.slot == "arm"){

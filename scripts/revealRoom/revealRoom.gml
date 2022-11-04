@@ -11,7 +11,6 @@ function revealRoom(){
 		}
 	}
 	
-	setTileImages();
 
 
 }

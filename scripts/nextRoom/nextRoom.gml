@@ -7,7 +7,6 @@ function nextRoom(note){
 	random_set_seed(n);
 	
 	for(var i=0; i<pc.stage; i++){
-		//show_debug_message( irandom_range(0, 1000) );
 		var j = irandom_range(0, 1000);
 	}
 	
@@ -27,7 +26,7 @@ function nextRoom(note){
 	pc.stage ++;
 	
 	if(pc.xs % 2 != 0){
-		if(pc.xs < ww.WIDTH / 2){
+		if(pc.xs < ww.W){
 			pc.xs ++;
 		} else {
 			pc.xs --;
@@ -35,7 +34,7 @@ function nextRoom(note){
 	}
 	
 	if(pc.ys % 2 != 0){
-		if(pc.ys < ww.HEIGHT / 2){
+		if(pc.ys < ww.H){
 			pc.ys ++;
 		} else {
 			pc.ys --;
@@ -46,8 +45,8 @@ function nextRoom(note){
 	pc.y = pc.ys * 50 + 25;
 	
 	
-	for(var a=0; a<ww.WIDTH; a++){
-		for(var b=0; b<ww.HEIGHT; b++){
+	for(var a=0; a<ww.W; a++){
+		for(var b=0; b<ww.H; b++){
 			if(ww.mmap[a, b] != noone){
 				instance_destroy(ww.mmap[a, b]);
 				ww.mmap[a, b] = noone;
@@ -59,8 +58,8 @@ function nextRoom(note){
 			instance_destroy(); 
 		}
 	}
-	for(var a=0; a<ww.WIDTH; a++){
-		for(var b=0; b<ww.HEIGHT; b++){
+	for(var a=0; a<ww.W; a++){
+		for(var b=0; b<ww.H; b++){
 			ww.imap[a, b] = noone;
 		}
 	}
@@ -69,13 +68,11 @@ function nextRoom(note){
 	
 	nextRoomGrassFill();
 	
-	if(pc.stage % 2 == 0 && pc.stage > 3){ placeRoom(); }
-	if(pc.stage > 0 && irandom_range(0, 4) < 100){ placeRiver(); }
+	//if(pc.stage % 2 == 0 && pc.stage > 3){ placeRoom(); }
+	//if(pc.stage > 0 && irandom_range(0, 4) < 100){ placeRiver(); }
 	
-	loadNodes();
-	loadTRoll();
 	loadShops();
-	setTileImages();
+
 	
 	
 	

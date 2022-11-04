@@ -14,7 +14,7 @@ function playerPassedTurn(){
 				while(cx != pc.xs || cy != pc.ys){
 					if(cx != xs || cy != ys){ // don't check starting space
 					
-						if(cx < 0 || cy < 0 || cx >= ww.WIDTH || cy >= ww.HEIGHT){
+						if(cx < 0 || cy < 0 || cx >= ww.W || cy >= ww.H){
 							ok = false;
 							break;
 						}

@@ -2,8 +2,8 @@ function placeRoom(){
 	
 	
 	do {
-		var aa = irandom_range(0, ww.WIDTH - 5);
-		var bb = irandom_range(0, ww.HEIGHT - 5);
+		var aa = irandom_range(0, ww.W - 5);
+		var bb = irandom_range(0, ww.H - 5);
 		
 		var dis = abs(pc.xs - (aa + 2)) + abs(pc.ys - (bb + 2));
 		

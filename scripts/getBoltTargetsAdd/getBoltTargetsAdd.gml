@@ -1,6 +1,6 @@
 function getBoltTargetsAdd(a, b){
 
-	if(a < 0 || b < 0 || a >= ww.WIDTH || b >= ww.HEIGHT){
+	if(a < 0 || b < 0 || a >= ww.W || b >= ww.H){
 		return;
 	}
 

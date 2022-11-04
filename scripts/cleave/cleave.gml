@@ -10,7 +10,7 @@ function cleave(c1, c2){
 		if(i == 6){ var aa = pc.xs-1; var bb = pc.ys+1; }
 		if(i == 7){ var aa = pc.xs-1; var bb = pc.ys-1; }
 		
-		if(aa >= 0 && bb >= 0 && aa < ww.WIDTH && bb < ww.HEIGHT){
+		if(aa >= 0 && bb >= 0 && aa < ww.W && bb < ww.H){
 			if(ww.mmap[aa, bb] != noone && ww.mmap[aa, bb] != c1 && ww.mmap[aa, bb] != c2){
 				var m = ww.mmap[aa, bb];
 				

@@ -8,7 +8,7 @@ function movePlayer(xMove, yMove){
 	var a = pc.xs + xMove;
 	var b = pc.ys + yMove;
 	
-	if(a < 0 || b < 0 || a >= ww.WIDTH || b >= ww.HEIGHT){ return false; }
+	if(!inBounds(a, b)){ return false; }
 	
 	
 	
@@ -22,8 +22,9 @@ function movePlayer(xMove, yMove){
 		return false;
 	}
 	
-	var canStep = ww.bmap[a, b] < 50;
-	if(ww.bmap[a, b] == 60){
+	var canStep = ww.bmap[a, b] == noone;
+	
+	if(ww.bmap[a, b] == imgChest){
 		if(pc.canAttack && pc.keys > 0){
 			openChest(a, b);
 			nudgeSprite(pc, a, b);
@@ -32,6 +33,7 @@ function movePlayer(xMove, yMove){
 	
 	if(pc.debug){ canStep = true; }
 	if(canStep){
+		
 		pc.xs = a; pc.ys = b;
 		enterTile(pc, a, b);
 		return true;

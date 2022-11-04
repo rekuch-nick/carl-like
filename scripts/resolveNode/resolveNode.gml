@@ -30,7 +30,7 @@ function resolveNode(){
 		}
 		dc[d] = true;
 		
-		if(xt >= 0 && yt >= 0 && xt < WIDTH && yt < HEIGHT){
+		if(xt >= 0 && yt >= 0 && xt < W && yt < H){
 			if(bmap[xt, yt] == 99){
 				destroyBlock(xt, yt);
 				destroyBlock(xm, ym);
