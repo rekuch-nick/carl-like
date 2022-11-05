@@ -65,6 +65,9 @@ wep = noone;
 arm = noone;
 rng = noone;
 
+equip(instance_create_depth(room_width + 50, 0, -500, objStaff));
+equip(instance_create_depth(room_width + 50, 0, -500, objLeatherArmor));
+
 
 
 setPlayerStats();

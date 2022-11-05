@@ -41,13 +41,12 @@ function spawnGear(t, a, b){
 	
 	if(item.slot == "wep"){
 		item.str += item.bonus;
-		if(item.bonus >= 5){
-			item.textColor = c_green;
-		}
+		if(item.bonus >= 5){ item.textColor = c_green; }
 	}
 	
 	if(item.slot == "arm"){
 		item.hp += item.bonus * 10;
+		if(item.bonus >= 5){ item.textColor = c_green; }
 	}
 	
 	if(item.slot == "rng"){

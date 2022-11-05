@@ -9,6 +9,8 @@ function enchantGear(n){
 	if(n == 1){
 		pc.wep.bonus ++;
 		pc.wep.str ++;
+		
+		if(pc.wep.bonus >= 5){ pc.wep.textColor = c_green; }
 	}
 	
 	if(n == 2){
@@ -16,7 +18,11 @@ function enchantGear(n){
 		pc.arm.hp += 10;
 		if(pc.arm.spd < 0){ pc.arm.spd ++; }
 		if(pc.arm.evd < 0){ pc.arm.evd += 5; }
+		
+		if(pc.arm.bonus >= 5){ pc.wep.textColor = c_green; }
 	}
+	
+	
 	
 	setPlayerStats();
 }

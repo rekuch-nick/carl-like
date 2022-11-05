@@ -1,16 +1,19 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "objGear",
-  "spriteId": null,
+  "name": "objStaff",
+  "spriteId": {
+    "name": "imgStaff",
+    "path": "sprites/imgStaff/imgStaff.yy",
+  },
   "solid": false,
   "visible": true,
   "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "objItem",
-    "path": "objects/objItem/objItem.yy",
+    "name": "objGear",
+    "path": "objects/objGear/objGear.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -30,7 +33,7 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "items",
-    "path": "folders/Objects/items.yy",
+    "name": "gear",
+    "path": "folders/Objects/items/gear.yy",
   },
 }

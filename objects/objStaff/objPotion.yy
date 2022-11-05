@@ -1,11 +1,10 @@
 {
-  "resourceType": "GMObject",
-  "resourceVersion": "1.0",
-  "name": "objGear",
-  "spriteId": null,
+  "spriteId": {
+    "name": "imgPotion",
+    "path": "sprites/imgPotion/imgPotion.yy",
+  },
   "solid": false,
   "visible": true,
-  "managed": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
@@ -24,13 +23,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
     "name": "items",
     "path": "folders/Objects/items.yy",
   },
+  "resourceVersion": "1.0",
+  "name": "objPotion",
+  "tags": [],
+  "resourceType": "GMObject",
 }

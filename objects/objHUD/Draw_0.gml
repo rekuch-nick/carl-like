@@ -6,7 +6,9 @@ draw_set_color(c_white);
 var m = 290;
 var per = m * (pc.hp / pc.mhp);
 draw_rectangle_color(955, 7, 1245, 30, c_black, c_black, c_black, c_black, false);
-draw_rectangle_color(955, 7, 955 + per, 30, c_maroon, c_maroon, c_red, c_red, false);
+var c1 = c_red; var c2 = c_maroon;
+if(hasAbility(pc, "Poisoned")){c1 = c_lime; c2 = c_green; }
+draw_rectangle_color(955, 7, 955 + per, 30, c2, c2, c1, c1, false);
 var s = "HP: " + string(pc.hp) + " / " + string(pc.mhp);
 draw_text(960, 10, s);
 
