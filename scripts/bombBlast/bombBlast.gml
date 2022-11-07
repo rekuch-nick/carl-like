@@ -1,10 +1,8 @@
 function bombBlast(a, b){
 	
-	if(a < 0 || b < 0 || a >= ww.W || b >= ww.H){
-		return;
-	}
+	if(!inBounds(a, b)){ return; }
 	
-	if(ww.bmap[a, b] >= 50 && ww.bmap[a, b] < 60){
+	if(ww.bmap[a, b] != noone && tileUnimportant(ww.bmap[a, b])){
 		destroyBlock(a, b)
 	}
 	

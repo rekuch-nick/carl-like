@@ -42,12 +42,10 @@ to buy items
 	if(s == "star"){
 		
 		draw_text(960, 460,
-@"Improve
-weapons or
-armor.
-press K / L or
-click left /
-right of this"
+@"Improves gear
+Hold J/K/L or
+click item to
+use"
 		);
 		
 	}

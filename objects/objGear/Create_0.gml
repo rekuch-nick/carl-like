@@ -21,6 +21,8 @@ mp = 0;
 heal = 0;
 charge = 0;
 
+spd_b = 0;
+evd_b = 0;
 
 traits = ds_list_create();
 

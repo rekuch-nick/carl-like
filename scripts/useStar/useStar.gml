@@ -11,6 +11,7 @@ function useStar(n){
 	
 	if(n == 1 && pc.wep == noone){ pc.enchantTime = 0; return; }
 	if(n == 2 && pc.arm == noone){ pc.enchantTime = 0; return; }
+	if(n == 3 && pc.rng == noone){ pc.enchantTime = 0; return; }
 	
 	chargedEnchant = true;
 	pc.enchantTime ++;

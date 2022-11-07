@@ -8,6 +8,9 @@ function revealRoom(){
 			
 			ww.fmap[a, b] = ww.fRoom[aa, bb];
 			ww.bmap[a, b] = ww.bRoom[aa, bb];
+			if(ww.iRoom[aa, bb] != noone){
+				placeFloorItem(ww.iRoom[aa, bb], a, b);
+			}
 		}
 	}
 	

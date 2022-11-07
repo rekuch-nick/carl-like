@@ -57,8 +57,8 @@ function placeRiver(){
 		
 		if(tries > 5000){ break; }
 		if(!inBounds(aa, bb)){ continue; }
-		if(ww.bmap[aa, bb] != 50 && ww.bmap[aa, bb] != 0){ ok = false; }
-		if(ww.fmap[aa, bb] > 10){ ok = false; }
+		//if(ww.bmap[aa, bb] == 50 && ww.bmap[aa, bb] != 0){ ok = false; }
+		if(!tileUnimportant(ww.fmap[aa, bb]) ){ ok = false; }
 		//if(aa > a && aa > xEnd && irandom_range(1, 16) != 1){ okay = false; }
 		//if(aa < a && aa < xEnd && irandom_range(1, 16) != 1){ okay = false; }
 		//if(bb > b && bb > yEnd && irandom_range(1, 16) != 1){ okay = false; }
@@ -67,8 +67,8 @@ function placeRiver(){
 		
 		
 		if(ok){
-			ww.fmap[aa, bb] = 10;
-			ww.bmap[aa, bb] = 0;
+			ww.fmap[aa, bb] = imgWater;
+			ww.bmap[aa, bb] = noone;
 			a = aa; b = bb;
 		}
 		
@@ -77,5 +77,5 @@ function placeRiver(){
 	
 	
 	
-	show_debug_message(pc.stage);
+	
 }

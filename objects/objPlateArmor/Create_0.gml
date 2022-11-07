@@ -6,8 +6,8 @@ slot = "arm";
 
 
 def = 50;
-spd = -8;
-evd = -40;
+spd_b = -8;
+evd_b = -40;
 
 
 

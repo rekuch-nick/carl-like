@@ -1,5 +1,8 @@
 function worldGen(){
 	
+	ww.kills = 0;
+	ww.killsMax = 10 + pc.stage;
+	
 	var n = ww.seed;
 	
 	random_set_seed(n);
@@ -74,25 +77,43 @@ function worldGen(){
 	if(pc.stage > 0){
 		
 		
+		if(pc.stage % 2 == 0 && pc.stage > 3){ placeRoom(); }
+		
+		
 		worldGenMazeFrom(pc.xs, pc.ys);
 		var spaces = 50 - (pc.stage*2);
 		for(var i=0; i<spaces; i++){ destroyRandomBlock(imgBlock, noone); }
-		var items = irandom_range(0, 3) + irandom_range(0, 3);
-		for(var i=0; i<items; i++){ placeFloorItem(noone, -1, -1); }
+		
+		if(pc.stage % 7 == 0){
+			placeFreeFloorDistantPlusBlock(imgExit, imgKillGate);
+			
+		} else {
+			var switches = irandom_range(1, 2) + ceil(pc.stage / 7);
+			for(var i=0; i<switches; i++){ placeFreeFloor(imgSwitchUp); }
+			if(switches == 0){
+				placeFreeFloorDistant(imgExit);
+			} else {
+				placeFreeFloorDistant(imgExitSeal);
+			}
+		}
+		
+		var items = irandom_range(1, 4) + irandom_range(1, 4) + irandom_range(1, 4);
+		for(var i=0; i<items; i++){ 
+			var t = i%2 == 0 ? noone: objCoin;
+			placeFloorItem(t, -1, -1); 
+		}
 		var chests = pc.stage % 2 != 1 ? irandom_range(1, 3) : 0;
 		for(var i=0; i<chests; i++){ destroyRandomBlock(imgBlock, imgChest); }
-		var switches = irandom_range(1, 2) + ceil(pc.stage / 7);
-		for(var i=0; i<switches; i++){ placeFreeFloor(imgSwitchUp); }
-		if(switches == 0){
-			placeFreeFloorDistant(imgExit);
-		} else {
-			placeFreeFloorDistant(imgExitSeal);
-		}
+		
+		
+		
+		
+		
 	}
 	
-	
-	//if(pc.stage % 2 == 0 && pc.stage > 3){ placeRoom(); }
+	//todo: make diff river code
 	//if(pc.stage > 0 && irandom_range(0, 4) < 100){ placeRiver(); }
+	
 	
 	loadShops();
 	

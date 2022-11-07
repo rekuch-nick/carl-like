@@ -89,19 +89,19 @@ if(buying4) { if(ww.shopItem[i] != noone && pc.coins >= ww.shopPrice[i]) {
 	ww.shopItem[i] = noone;
 }}
 
-if(stat1 && pc.skillPoints >= pc.strCost){ pc.str_l ++; setPlayerStats(); pc.skillPoints -= pc.strCost; }
-if(stat2 && pc.skillPoints >= pc.powCost){ pc.pow_l ++; setPlayerStats(); pc.skillPoints -= pc.powCost; }
-if(stat3 && pc.skillPoints >= pc.spdCost){ pc.spd_l ++; setPlayerStats(); pc.skillPoints -= pc.spdCost; }
-if(stat4 && pc.skillPoints >= pc.evdCost){ pc.evd_l ++; setPlayerStats(); pc.skillPoints -= pc.evdCost; }
-if(stat5 && pc.skillPoints >= pc.defCost){ pc.def_l ++; setPlayerStats(); pc.skillPoints -= pc.defCost; }
-if(stat6 && pc.skillPoints >= pc.resCost){ pc.res_l ++; setPlayerStats(); pc.skillPoints -= pc.resCost; }
-if(stat7 && pc.skillPoints >= pc.hpCost){ pc.hp_l ++; setPlayerStats(); pc.skillPoints -= pc.hpCost; }
-if(stat8 && pc.skillPoints >= pc.mpCost){ pc.mp_l ++; setPlayerStats(); pc.skillPoints -= pc.mpCost; }
+if(stat1 && pc.skillPoints >= pc.strCost){ pc.str_l ++; pc.skillPoints -= pc.strCost; setPlayerStats(); }
+if(stat2 && pc.skillPoints >= pc.powCost){ pc.pow_l ++; pc.skillPoints -= pc.powCost; setPlayerStats(); }
+if(stat3 && pc.skillPoints >= pc.spdCost){ pc.spd_l ++; pc.skillPoints -= pc.spdCost; setPlayerStats(); }
+if(stat4 && pc.skillPoints >= pc.evdCost){ pc.evd_l ++; pc.skillPoints -= pc.evdCost; setPlayerStats(); }
+if(stat5 && pc.skillPoints >= pc.defCost){ pc.def_l ++; pc.skillPoints -= pc.defCost; setPlayerStats(); }
+if(stat6 && pc.skillPoints >= pc.resCost){ pc.res_l ++; pc.skillPoints -= pc.resCost; setPlayerStats(); }
+if(stat7 && pc.skillPoints >= pc.hpCost){ pc.hp_l ++; pc.skillPoints -= pc.hpCost; setPlayerStats(); }
+if(stat8 && pc.skillPoints >= pc.mpCost){ pc.mp_l ++; pc.skillPoints -= pc.mpCost; setPlayerStats(); }
 
 
-if(spell1 && pc.skillPoints >= pc.spell1Cost &&  pc.spellLevel_l[1] < pc.spellMax[1]){ pc.spellLevel_l[1] ++; setPlayerStats(); pc.skillPoints -= pc.spell1Cost; }
-if(spell2 && pc.skillPoints >= pc.spell2Cost &&  pc.spellLevel_l[2] < pc.spellMax[2]){ pc.spellLevel_l[2] ++; setPlayerStats(); pc.skillPoints -= pc.spell2Cost; }
-if(spell3 && pc.skillPoints >= pc.spell3Cost &&  pc.spellLevel_l[3] < pc.spellMax[3]){ pc.spellLevel_l[3] ++; setPlayerStats(); pc.skillPoints -= pc.spell3Cost; }
-if(spell4 && pc.skillPoints >= pc.spell4Cost &&  pc.spellLevel_l[4] < pc.spellMax[4]){ pc.spellLevel_l[4] ++; setPlayerStats(); pc.skillPoints -= pc.spell4Cost; }
-if(spell5 && pc.skillPoints >= pc.spell5Cost &&  pc.spellLevel_l[5] < pc.spellMax[5]){ pc.spellLevel_l[5] ++; setPlayerStats(); pc.skillPoints -= pc.spell5Cost; }
-if(spell6 && pc.skillPoints >= pc.spell6Cost &&  pc.spellLevel_l[6] < pc.spellMax[6]){ pc.spellLevel_l[6] ++; setPlayerStats(); pc.skillPoints -= pc.spell6Cost; }
+if(spell1 && pc.skillPoints >= pc.spell1Cost &&  pc.spellLevel_l[1] < pc.spellMax[1]){ pc.spellLevel_l[1] ++; pc.skillPoints -= pc.spell1Cost; setPlayerStats(); }
+if(spell2 && pc.skillPoints >= pc.spell2Cost &&  pc.spellLevel_l[2] < pc.spellMax[2]){ pc.spellLevel_l[2] ++; pc.skillPoints -= pc.spell2Cost; setPlayerStats(); }
+if(spell3 && pc.skillPoints >= pc.spell3Cost &&  pc.spellLevel_l[3] < pc.spellMax[3]){ pc.spellLevel_l[3] ++; pc.skillPoints -= pc.spell3Cost; setPlayerStats(); }
+if(spell4 && pc.skillPoints >= pc.spell4Cost &&  pc.spellLevel_l[4] < pc.spellMax[4]){ pc.spellLevel_l[4] ++; pc.skillPoints -= pc.spell4Cost; setPlayerStats(); }
+if(spell5 && pc.skillPoints >= pc.spell5Cost &&  pc.spellLevel_l[5] < pc.spellMax[5]){ pc.spellLevel_l[5] ++; pc.skillPoints -= pc.spell5Cost; setPlayerStats(); }
+if(spell6 && pc.skillPoints >= pc.spell6Cost &&  pc.spellLevel_l[6] < pc.spellMax[6]){ pc.spellLevel_l[6] ++; pc.skillPoints -= pc.spell6Cost; setPlayerStats(); }

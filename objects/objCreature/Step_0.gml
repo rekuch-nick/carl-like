@@ -19,6 +19,9 @@ if(face == -1){ if(image_xscale > 0){ image_xscale *= -1; }}
 
 if(hp < 1 && !isPlayer){ if(instance_number(objShot) < 1){
 	
+	
+	resolveKills(1);
+	
 	if(ww.hud.mob == ww.mmap[xs, ys]){ ww.hud.mob = noone; }
 	ww.mmap[xs, ys] = noone;
 	instance_destroy();

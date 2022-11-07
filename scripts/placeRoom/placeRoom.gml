@@ -11,8 +11,8 @@ function placeRoom(){
 	
 	for(var a=aa; a<aa+5; a++){
 		for(var b=bb; b<bb+5; b++){
-			ww.fmap[a, b] = 25;
-			ww.bmap[a, b] = 0;
+			ww.fmap[a, b] = imgRoom;
+			ww.bmap[a, b] = noone;
 		}
 	}
 	
@@ -21,26 +21,31 @@ function placeRoom(){
 	
 	for(var a=0; a<5; a++){
 		for(var b=0; b<5; b++){
-			ww.fRoom[a, b] = 1;
-			ww.bRoom[a, b] = 0;
+			ww.fRoom[a, b] = imgGrass;
+			ww.bRoom[a, b] = noone;
+			ww.iRoom[a, b] = noone;
 		}
 	}
 	
 	var r = irandom_range(1, 2);
 	
 	if(r == 1){
-		ww.bRoom[1, 1] = 50;
-		ww.bRoom[3, 1] = 50;
-		ww.bRoom[1, 3] = 50;
-		ww.bRoom[3, 3] = 50;
+		ww.bRoom[1, 1] = imgBlock;
+		ww.bRoom[3, 1] = imgBlock;
+		ww.bRoom[1, 3] = imgBlock;
+		ww.bRoom[3, 3] = imgBlock;
+		
+		ww.iRoom[2, 2] = objCarrot;
 	}
 	
 	if(r == 2){
-		ww.bRoom[2, 1] = 50;
-		ww.bRoom[1, 2] = 50;
-		ww.bRoom[2, 2] = 50;
-		ww.bRoom[3, 2] = 50;
-		ww.bRoom[2, 3] = 50;
+		ww.bRoom[2, 1] = imgBlock;
+		ww.bRoom[1, 2] = imgBlock;
+		
+		ww.bRoom[3, 2] = imgBlock;
+		ww.bRoom[2, 3] = imgBlock;
+		
+		ww.iRoom[2, 2] = objCarrot;
 	}
 
 	

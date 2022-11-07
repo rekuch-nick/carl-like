@@ -39,19 +39,9 @@ function spawnGear(t, a, b){
 	item.bonus = ceil(pc.stage / 10);
 	if(r2 >= 86){ item.bonus ++; }
 	
-	if(item.slot == "wep"){
-		item.str += item.bonus;
-		if(item.bonus >= 5){ item.textColor = c_green; }
-	}
 	
-	if(item.slot == "arm"){
-		item.hp += item.bonus * 10;
-		if(item.bonus >= 5){ item.textColor = c_green; }
-	}
-	
-	if(item.slot == "rng"){
-		item.bonus = 0;
-	}
+	if(item.slot == "rng"){ item.bonus = 0; }
+	gearSetStats(item);
 	
 	ww.imap[a, b] = item;
 

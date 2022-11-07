@@ -2,6 +2,8 @@ function playerPassedTurn(){
 	
 	with(objCreature){ if(!ally && !isPlayer){
 		
+		
+		
 		//shooting
 		if(xs == pc.xs || ys == pc.ys){ if(!justStruck && shotType != noone) {
 			

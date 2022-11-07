@@ -8,7 +8,7 @@ function collectItemByImage(i){
 	}
 	
 	if(i == imgBomb){
-		pc.bombs ++;
+		pc.bombs += 4;
 		return true;
 	}
 	

@@ -1,5 +1,6 @@
 event_inherited();
 debug = false;
+icd = 0;
 
 skillPoints = 0;
 

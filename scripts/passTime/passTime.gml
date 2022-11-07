@@ -3,25 +3,27 @@ function passTime(){
 	
 	pc.spawnCD --;
 	if(pc.spawnCD <= 0){
+		
+		
+		
+		with(objCreature){
+			hp = clamp(hp + heal, 0, mhp);
+			mp = clamp(mp + charge, 0, mmp);
+		}
+		
+		
+		
+		
+		
+		
+		
 		pc.spawnCD = pc.spawnCDMax;
 		
 		spawnMonster(-1, -1, noone);
 		
 	}
 	
-	with(objCreature){
-		healCD --;
-		if(healCD < 1){
-			healCD = healCDMax;
-			hp = clamp(hp + heal, 0, mhp);
-		}
-		
-		chargeCD --;
-		if(chargeCD < 1){
-			chargeCD = chargeCDMax;
-			mp = clamp(mp + charge, 0, mmp);
-		}
-	}
+	
 
 
 }

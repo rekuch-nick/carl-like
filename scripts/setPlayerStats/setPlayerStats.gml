@@ -17,9 +17,9 @@ function setPlayerStats(){
 	pc.mmp = 20 + pc.mp_l * 5;
 	
 	
-	pc.healCDMax = 10; 
-	pc.heal = 0;
-	pc.chargeCDMax = 10; 
+	//pc.healCDMax = 10; 
+	pc.heal = 0; ////
+	//pc.chargeCDMax = 10; 
 	pc.charge = 0;
 	
 	
@@ -38,7 +38,7 @@ function setPlayerStats(){
 	pc.spellMax[5] = 3;
 	pc.spellMax[6] = 3;
 	
-	pc.spellCost[1] = 12;
+	pc.spellCost[1] = 6;
 	pc.spellCost[2] = 6;
 	pc.spellCost[3] = 6;
 	pc.spellCost[4] = 6;
@@ -93,8 +93,12 @@ function setPlayerStats(){
 	
 	
 	
-	pc.strCost = 1;
-	pc.powCost = 1;
+	pc.strCost = 2;
+		if(pc.str_l >= 4){ pc.strCost = 3; }
+		if(pc.str_l >= 8){ pc.strCost = 4; }
+	pc.powCost = 2;
+		if(pc.pow_l >= 6){ pc.powCost = 3; }
+		if(pc.pow_l >= 12){ pc.powCost = 4; }
 	pc.spdCost = 1;
 	pc.evdCost = 1;
 	pc.defCost = 1;
